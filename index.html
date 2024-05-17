@@ -23,44 +23,26 @@
     }
 
     .image-container {
-      position: absolute;
-      top: 0;
-      left: 0;
+      position: relative;
       width: 100%;
-      height: 100%;
+      height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;
     }
 
     .image-container img {
-      width: 100%;
-      height: 100%;
-      object-fit: fill;
+      max-width: 100%;
+      max-height: calc(100vh - 20px); /* Adjust as needed */
+      width: auto;
+      height: auto;
     }
   </style>
 </head>
 <body>
   <div class="ocean-background"></div>
-  <div class="image-container" id="imageContainer">
-    <img src="screen.png" alt="Image" id="image">
+  <div class="image-container">
+    <img src="screen.png" alt="Image">
   </div>
-
-  <script>
-    // Adjust image container height dynamically
-    function adjustImageContainerHeight() {
-      var imageContainer = document.getElementById('imageContainer');
-      var image = document.getElementById('image');
-      var windowHeight = window.innerHeight;
-      var imageHeight = image.offsetHeight;
-      var navbarHeight = windowHeight - document.documentElement.clientHeight;
-
-      imageContainer.style.height = windowHeight - navbarHeight + 'px';
-    }
-
-    // Call the function on page load and window resize
-    window.onload = adjustImageContainerHeight;
-    window.onresize = adjustImageContainerHeight;
-  </script>
 </body>
 </html>
