@@ -33,16 +33,18 @@
     }
 
     .image-container img {
-      width: 100%;
-      height: auto; /* Adjusts height to maintain aspect ratio */
-      object-fit: cover;
+      max-width: 100%;
+      max-height: 100%;
+      width: auto;
+      height: auto;
+      object-fit: contain;
     }
 
     @media screen and (max-width: 767px) {
       /* Adjust image size for mobile screens */
       .image-container img {
         height: 100vh;
-        width: auto;
+        width: 100vw;
       }
     }
   </style>
